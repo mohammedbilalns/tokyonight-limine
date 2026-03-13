@@ -1,65 +1,52 @@
-<h3 align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://limine-bootloader.org/">Limine</a>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-</h3>
+# Tokyo Night Dark for Limine
 
-<p align="center">
-	<a href="https://github.com/catppuccin/limine/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/limine?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/catppuccin/limine/issues"><img src="https://img.shields.io/github/issues/catppuccin/limine?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/catppuccin/limine/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/limine?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
-</p>
+Tokyo Night Dark theme for the [Limine](https://limine-bootloader.org/)
+bootloader.
 
-<p align="center">
-	<img src="assets/preview.webp"/>
-</p>
+## Files
 
-## Previews
+- [`themes/tokyonight-dark.conf`](./themes/tokyonight-dark.conf): ready-to-use
+  Limine theme snippet
+- [`limine.tera`](./limine.tera): source template used to generate the theme
 
-<details>
-<summary>🌻 Latte</summary>
-<img src="assets/latte.webp"/>
-</details>
-<details>
-<summary>🪴 Frappé</summary>
-<img src="assets/frappe.webp"/>
-</details>
-<details>
-<summary>🌺 Macchiato</summary>
-<img src="assets/macchiato.webp"/>
-</details>
-<details>
-<summary>🌿 Mocha</summary>
-<img src="assets/mocha.webp"/>
-</details>
+## Palette
+
+- Background: `#1a1b26`
+- Foreground: `#c0caf5`
+- Bright background: `#414868`
+- ANSI accents: `#f7768e`, `#9ece6a`, `#e0af68`, `#7aa2f7`, `#bb9af7`,
+  `#7dcfff`
 
 ## Usage
 
-1. Paste the contents of the flavor of your choice from [`themes/`](./themes/) to the start of your Limine configuration file, which is typically located at `/boot/limine.conf` or `/boot/efi/limine.conf`.
+1. Open your Limine configuration file, usually `/boot/limine.conf` or
+   `/boot/efi/limine.conf`.
+2. Paste the contents of
+   [`themes/tokyonight-dark.conf`](./themes/tokyonight-dark.conf) at the top of
+   the file.
+3. Save the config and reboot.
 
-## 🙋 FAQ
+## Regenerating
 
-- Q: **_"How can I hide the Limine title text like in the screenshot?"_**\
-  A: Add `interface_branding:` to your configuration file to set it to an empty string and hide it.
+If you change [`limine.tera`](./limine.tera), regenerate the output with:
 
-- Q: **_"What other configuration options exist?"_**\
-  A: See [limine/CONFIG.md](https://github.com/limine-bootloader/limine/blob/v8.x/CONFIG.md).
+```sh
+just build
+```
 
-## 💝 Thanks to
+This runs `whiskers limine.tera` and rewrites
+[`themes/tokyonight-dark.conf`](./themes/tokyonight-dark.conf).
 
-- [mekb](https://github.com/mekb-turtle)
+## FAQ
 
-&nbsp;
+- Q: How do I hide the Limine title text?
+  A: Add `interface_branding:` with an empty value in your Limine config.
 
-<p align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
-</p>
+- Q: Where are the other Limine configuration options documented?
+  A: See
+  [limine/CONFIG.md](https://github.com/limine-bootloader/limine/blob/v8.x/CONFIG.md).
 
-<p align="center">
-	Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
-</p>
+## Credits
 
-<p align="center">
-	<a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
-</p>
+- Original Limine theme structure based on work by
+  [mekb](https://github.com/mekb-turtle)
